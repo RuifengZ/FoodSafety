@@ -32,6 +32,11 @@ export default {
           sortable: true
         },
         {
+          key: "product_description",
+          label: "Food",
+          sortable: true
+        },
+        {
           key: "reason_for_recall",
           sortable: false,
           variant: "danger"
