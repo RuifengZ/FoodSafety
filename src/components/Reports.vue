@@ -1,7 +1,11 @@
 <template>
   <div>
     <b-button @click="getInfo">test</b-button>
-    <b-table :items="data"></b-table>
+    <b-row align-h="center">
+      <b-col cols="10">
+        <b-table :items="data" :fields="fields" :bordered="true"></b-table>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -12,7 +16,27 @@ import db from "@/components/Firebase.js";
 export default {
   data() {
     return {
-      data: []
+      data: [],
+      fields: [
+        {
+          key: "report_date",
+          sortable: true
+        },
+        {
+          key: "city",
+          sortable: true
+        },
+        {
+          key: "recalling_firm",
+          label: "Recalling Firm",
+          sortable: true
+        },
+        {
+          key: "reason_for_recall",
+          sortable: false,
+          variant: "danger"
+        }
+      ]
     };
   },
   methods: {
