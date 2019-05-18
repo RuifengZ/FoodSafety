@@ -22,6 +22,10 @@ export default {
           key: "report_date",
           sortable: true
         },
+	{
+          key: "state",
+          sortable: true
+        },
         {
           key: "city",
           sortable: true
@@ -33,7 +37,7 @@ export default {
         },
         {
           key: "product_description",
-          label: "Food",
+          label: "Product Information",
           sortable: true
         },
         {
