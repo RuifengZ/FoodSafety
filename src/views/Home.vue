@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <emailbar/>
-    <Reports/>
+    <b-container class="bv-example-row">
+      <Reports/>
+    </b-container>
   </div>
 </template>
 

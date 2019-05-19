@@ -1,13 +1,15 @@
 <template>
   <div>
-    <b-row align-h="center">
-      <b-col cols="5">
-        <b-form-input v-model="email" placeholder="Enter your email"></b-form-input>
-      </b-col>
-      <b-col md="auto">
-        <b-button variant="dark" @click="storeEmail">Submit</b-button>
-      </b-col>
-    </b-row>
+    <b-container>
+      <b-row align-h="center">
+        <b-col cols="5">
+          <b-form-input v-model="email" placeholder="Enter your email"></b-form-input>
+        </b-col>
+        <b-col md="auto">
+          <b-button variant="dark" @click="storeEmail">Submit</b-button>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
