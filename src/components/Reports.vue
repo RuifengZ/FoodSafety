@@ -1,10 +1,6 @@
 <template>
   <div>
-    <b-container class="mt-0">
-      <b-row align-h="center" class="mb-2">
-        <b-button @click="getInfo">test</b-button>
-      </b-row>
-
+    <b-container>
       <b-row align-h="center" class="mb-2">
         <b-col cols="5">
           <b-form-input @change="searchFirm" v-model="searchTerm" placeholder="Search..."></b-form-input>
@@ -16,7 +12,14 @@
 
       <b-row align-h="center">
         <b-col cols="10">
-          <b-table :items="searchResults" :fields="fields" :busy="isBusy" :bordered="true">
+          <b-table
+            selectable
+            :items="searchResults"
+            :fields="fields"
+            :busy="isBusy"
+            :bordered="true"
+            @row-selected="rowSelected"
+          >
             <div slot="table-busy" class="text-center text-danger my-2">
               <b-spinner class="align-middle"></b-spinner>
               <strong>Loading...</strong>
@@ -43,7 +46,7 @@ export default {
           key: "report_date",
           sortable: true
         },
-	{
+        {
           key: "state",
           sortable: true
         },
@@ -103,7 +106,14 @@ export default {
         this.searchResults = fuse.search(this.searchTerm);
         console.log(this.searchResults);
       }
+    },
+    rowSelected(item) {
+      console.log(item[0].recalling_firm);
+      this.$router.push("/forum/" + item[0].recalling_firm);
     }
+  },
+  created() {
+    this.getInfo();
   }
 };
 </script>

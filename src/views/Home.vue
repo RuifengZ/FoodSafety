@@ -1,5 +1,12 @@
 <template>
   <div class="home">
+    <b-jumbotron bg-variant="info" text-variant="white" border-variant="dark">
+      <template slot="header">Food Probe</template>
+      <template
+        slot="lead"
+      >FoodProbe lets users look up contaminated food products that have been recalled by their producers and the FDA. The users can also make their own posts on contaminated food products.</template>
+      <router-link to="/">Home</router-link>
+    </b-jumbotron>
     <b-container class="bv-example-row">
       <Reports/>
     </b-container>
