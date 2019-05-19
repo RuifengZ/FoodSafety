@@ -43,6 +43,10 @@ export default {
           key: "report_date",
           sortable: true
         },
+	{
+          key: "state",
+          sortable: true
+        },
         {
           key: "city",
           sortable: true
@@ -50,6 +54,11 @@ export default {
         {
           key: "recalling_firm",
           label: "Recalling Firm",
+          sortable: true
+        },
+        {
+          key: "product_description",
+          label: "Product Information",
           sortable: true
         },
         {
